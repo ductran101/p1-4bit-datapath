@@ -1,0 +1,24 @@
+Suggested repository organization for Codex to create:
+
+p1-4bit-datapath/
+├── README.md
+├── rtl/
+│   ├── full_adder.v
+│   ├── adder_subtractor_4bit.v
+│   ├── logic_unit_4bit.v
+│   ├── shifter_4bit.v
+│   ├── control_unit.v
+│   ├── muldiv_unit.v
+│   ├── result_mux.v
+│   ├── flag_unit.v
+│   └── alu_4bit.v
+├── tb/
+│   └── alu_4bit_tb.v
+├── scripts/
+│   ├── vivado_run.tcl          # inferred/supporting, not explicitly defined by PDF
+│   └── check_sim.py            # inferred/supporting, not explicitly defined by PDF
+├── docs/
+│   ├── architecture.md
+│   ├── verification.md
+│   └── open_questions.md
+└── sources/                    # optional local reference; avoid committing if mentor says not to

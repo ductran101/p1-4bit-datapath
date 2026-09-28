@@ -1,0 +1,26 @@
+Time resolution is 1 ps
+Protocol checks: 9 scenarios, 0 errors (separate from exhaustive totals)
+
+ Op   code | A  B | result         | flags / notes
+ ----------+------+----------------+------------------------------
+ ADD  0000 |  5  3 | 00001000 (  8) | C=0 Z=0 V=1 N=1
+ ADD  0000 | 15  1 | 00000000 (  0) | C=1 Z=1 V=0 N=0
+ SUB  0001 |  5  3 | 00000010 (  2) | C=1 Z=0 V=0 N=0
+ SUB  0001 |  3  5 | 00001110 ( 14) | C=0 Z=0 V=0 N=1
+ AND  0010 | 12 10 | 00001000 (  8) | C=0 Z=0 V=0 N=1
+ OR   0011 | 12 10 | 00001110 ( 14) | C=0 Z=0 V=0 N=1
+ XOR  0100 | 12 10 | 00000110 (  6) | C=0 Z=0 V=0 N=0
+ NOT  0101 | 12  0 | 00000011 (  3) | C=0 Z=0 V=0 N=0
+ SHL  0110 | 11  0 | 00000110 (  6) | C=1 Z=0 V=0 N=0
+ SHR  0111 | 11  0 | 00000101 (  5) | C=1 Z=0 V=0 N=0
+ MUL  1000 | 13 11 | 10001111 (143) | product=143, 5 cycles
+ MUL  1000 | 15 15 | 11100001 (225) | product=225, 5 cycles
+ DIV  1001 | 13  4 | 00010011       | quotient=3 remainder=1 dbz=0, 5 cycles
+ DIV  1001 | 15  3 | 00000101       | quotient=5 remainder=0 dbz=0, 5 cycles
+ DIV  1001 |  9  0 | 10011111       | quotient=15 remainder=9 dbz=1, 5 cycles
+Representative checks: 15 cases, 0 errors (separate from exhaustive totals)
+
+PASS: 3584 single-cycle checks + 512 MUL/DIV checks, 0 errors
+Simulation completed at 35280000 (1 load + 4 work clocks per MUL/DIV).
+$finish called at time : 35280 ns : File "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/tb/alu_4bit_tb.v" Line 364
+INFO: xsimkernel Simulation Memory Usage: 511516 KB (Peak: 569048 KB), Simulation CPU Usage: 1800 ms

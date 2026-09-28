@@ -1,0 +1,18 @@
+/build/
+/.Xil/
+*.jou
+*.log
+*.vcd
+*.wdb
+__pycache__/
+*.pyc
+
+# Local backup files
+*.bak
+
+# Keep verification evidence logs
+!docs/vivado_evidence/vivado_sim.log
+!docs/vivado_evidence/vivado_synth.log
+
+# Vivado generated metadata
+/xvlog.pb

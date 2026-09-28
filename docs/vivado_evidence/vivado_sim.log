@@ -1,0 +1,192 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 28-sep-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Mon Sep 28 17:05:53 2026
+# Process ID         : 71373
+# Current directory  : /home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath
+# Command line       : vivado -mode batch -log build/vivado_sim.log -journal build/vivado_sim.jou -source scripts/vivado_run.tcl -tclargs sim xc7a35tcpg236-1
+# Log file           : /home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado_sim.log
+# Journal file       : /home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado_sim.jou
+# Running On         : ucccc
+# Platform           : Fedora
+# Operating System   : Fedora Linux 44 (Workstation Edition)
+# Processor Detail   : Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+# CPU Frequency      : 3199.975 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16417 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 25007 MB
+# Available Virtual  : 14726 MB
+#-----------------------------------------------------------
+source scripts/vivado_run.tcl
+# if {$argc != 2 || [lindex $argv 0] ni {sim synth}} {
+#     error "Usage: vivado -mode batch -source scripts/vivado_run.tcl -tclargs sim|synth <part>"
+# }
+# set mode [lindex $argv 0]
+# set part_name [lindex $argv 1]
+# if {[llength [get_parts -quiet $part_name]] != 1} {
+#     error "Choose one installed Vivado part: $part_name"
+# }
+# set repo_dir [file dirname [file dirname [file normalize [info script]]]]
+# set build_dir [file join $repo_dir build]
+# set project_dir [file join $build_dir vivado]
+# set rtl_files {}
+# foreach name {
+#     full_adder adder_subtractor_4bit logic_unit_4bit shifter_4bit
+#     control_unit muldiv_unit result_mux flag_unit alu_4bit
+# } {
+#     set source_file [file join $repo_dir rtl ${name}.v]
+#     if {![file isfile $source_file]} { error "Missing design source: $source_file" }
+#     lappend rtl_files $source_file
+# }
+# set tb_file [file join $repo_dir tb alu_4bit_tb.v]
+# if {![file isfile $tb_file]} { error "Missing simulation source: $tb_file" }
+# file mkdir $project_dir
+# create_project -force p1_4bit $project_dir -part $part_name
+create_project: Time (s): cpu = 00:00:34 ; elapsed = 00:00:10 . Memory (MB): peak = 1914.633 ; gain = 262.051 ; free physical = 955 ; free virtual = 13581
+# set_property target_language Verilog [current_project]
+# set_property target_simulator XSim [current_project]
+# add_files -norecurse $rtl_files
+# add_files -fileset sim_1 -norecurse [list $tb_file]
+# set_property file_type SystemVerilog [get_files $tb_file]
+# set_property top alu_4bit [get_filesets sources_1]
+# set_property top alu_4bit_tb [get_filesets sim_1]
+# update_compile_order -fileset sources_1
+# update_compile_order -fileset sim_1
+# if {$mode eq "sim"} {
+#     # Open at time zero, then explicitly run the complete self-checking testbench.
+#     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+#     launch_simulation -mode behavioral
+#     run all
+#     close_sim
+#     puts "XSim logs: [file join $project_dir p1_4bit.sim sim_1 behav xsim]"
+# } else {
+#     launch_runs synth_1
+#     wait_on_run synth_1
+#     if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} {
+#         error "Synthesis did not complete: [get_property STATUS [get_runs synth_1]]"
+#     }
+#     open_run synth_1
+#     report_utilization -file [file join $project_dir utilization.rpt]
+#     puts "Utilization report: [file join $project_dir utilization.rpt]"
+# }
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host ucccc (64) - Fedora Linux 44 (Workstation Edition)
+INFO: [Vivado 12-28535] Process started - Mon Sep 28 17:06:14 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'alu_4bit_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado/p1_4bit.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/run/media/tranngocduc/80CC04A8CC049A94/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'alu_4bit_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado/p1_4bit.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj alu_4bit_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/adder_subtractor_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_subtractor_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/alu_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/control_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/flag_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flag_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/full_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module full_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/logic_unit_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module logic_unit_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/muldiv_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module muldiv_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/result_mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module result_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/rtl/shifter_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shifter_4bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/tb/alu_4bit_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_4bit_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado/p1_4bit.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado/p1_4bit.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot alu_4bit_tb_behav xil_defaultlib.alu_4bit_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /run/media/tranngocduc/80CC04A8CC049A94/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot alu_4bit_tb_behav xil_defaultlib.alu_4bit_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.full_adder
+Compiling module xil_defaultlib.adder_subtractor_4bit
+Compiling module xil_defaultlib.logic_unit_4bit
+Compiling module xil_defaultlib.shifter_4bit
+Compiling module xil_defaultlib.muldiv_unit
+Compiling module xil_defaultlib.result_mux
+Compiling module xil_defaultlib.flag_unit
+Compiling module xil_defaultlib.alu_4bit
+Compiling module xil_defaultlib.alu_4bit_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot alu_4bit_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado/p1_4bit.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "alu_4bit_tb_behav -key {Behavioral:sim_1:Functional:alu_4bit_tb} -tclbatch {alu_4bit_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source alu_4bit_tb.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'alu_4bit_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1940.645 ; gain = 26.012 ; free physical = 1001 ; free virtual = 13577
+Protocol checks: 9 scenarios, 0 errors (separate from exhaustive totals)
+
+ Op   code | A  B | result         | flags / notes
+ ----------+------+----------------+------------------------------
+ ADD  0000 |  5  3 | 00001000 (  8) | C=0 Z=0 V=1 N=1
+ ADD  0000 | 15  1 | 00000000 (  0) | C=1 Z=1 V=0 N=0
+ SUB  0001 |  5  3 | 00000010 (  2) | C=1 Z=0 V=0 N=0
+ SUB  0001 |  3  5 | 00001110 ( 14) | C=0 Z=0 V=0 N=1
+ AND  0010 | 12 10 | 00001000 (  8) | C=0 Z=0 V=0 N=1
+ OR   0011 | 12 10 | 00001110 ( 14) | C=0 Z=0 V=0 N=1
+ XOR  0100 | 12 10 | 00000110 (  6) | C=0 Z=0 V=0 N=0
+ NOT  0101 | 12  0 | 00000011 (  3) | C=0 Z=0 V=0 N=0
+ SHL  0110 | 11  0 | 00000110 (  6) | C=1 Z=0 V=0 N=0
+ SHR  0111 | 11  0 | 00000101 (  5) | C=1 Z=0 V=0 N=0
+ MUL  1000 | 13 11 | 10001111 (143) | product=143, 5 cycles
+ MUL  1000 | 15 15 | 11100001 (225) | product=225, 5 cycles
+ DIV  1001 | 13  4 | 00010011       | quotient=3 remainder=1 dbz=0, 5 cycles
+ DIV  1001 | 15  3 | 00000101       | quotient=5 remainder=0 dbz=0, 5 cycles
+ DIV  1001 |  9  0 | 10011111       | quotient=15 remainder=9 dbz=1, 5 cycles
+Representative checks: 15 cases, 0 errors (separate from exhaustive totals)
+
+PASS: 3584 single-cycle checks + 512 MUL/DIV checks, 0 errors
+Simulation completed at 35280000 (1 load + 4 work clocks per MUL/DIV).
+$finish called at time : 35280 ns : File "/home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/tb/alu_4bit_tb.v" Line 364
+INFO: xsimkernel Simulation Memory Usage: 511516 KB (Peak: 569048 KB), Simulation CPU Usage: 1800 ms
+INFO: [Simtcl 6-16] Simulation closed
+XSim logs: /home/tranngocduc/PRJ1-/P1_4bit_Datapath_Complete/p1-4bit-datapath/build/vivado/p1_4bit.sim/sim_1/behav/xsim
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 28 17:06:25 2026...
