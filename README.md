@@ -104,7 +104,7 @@ vivado -mode batch -log build/vivado_synth.log -journal build/vivado_synth.jou -
 
 Vivado/XSim 2026.1 đã được chạy và xác nhận thành công với target kiểm chứng `xc7a35tcpg236-1`; xem bằng chứng chi tiết trong [verification.md](docs/verification.md). Kết quả synthesis phụ thuộc part; nguồn vẫn không quy định chân I/O, board hay ràng buộc timing cho phần cứng.
 
-Các điểm cần đặc tả thêm được giữ trong [open_questions.md](docs/open_questions.md). Tài liệu và nguồn được tổ chức để mentor có thể review trên GitHub; việc xuất bản repository chưa được thực hiện.
+Các điểm cần đặc tả thêm được giữ trong [open_questions.md](docs/open_questions.md). Project hiện đã được xuất bản trên GitHub để mentor review; chi tiết kiểm chứng hiện tại được lưu trong `docs/verification.md`.
 
 ---
 

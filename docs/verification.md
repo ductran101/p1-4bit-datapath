@@ -54,9 +54,9 @@ Testbench có giới hạn đợi MUL/DIV và watchdog 100 µs. Khi lỗi, `$fat
 
 ## Giới hạn của lần kiểm chứng này
 
-Máy hiện tại không có Vivado, nên **chưa chạy XSim hoặc synthesis trong Vivado**. RTL dùng cấu trúc tổng hợp được và đã biên dịch Verilog-2005; hướng dẫn GUI/Tcl được cung cấp để chạy trên máy có Vivado. Chưa có số liệu LUT/FF, timing hoặc bằng chứng chạy FPGA cho bản triển khai này. Số gate/FF trong PDF là kết quả tác giả báo cáo, không được coi là kết quả đo của project hiện tại.
+Ở giai đoạn kiểm chứng Icarus ban đầu, Vivado/XSim chưa được chạy. Trạng thái hiện tại đã được cập nhật trong mục **Vivado 2026.1 Verification — 2026-09-28** bên dưới, bao gồm XSim, elaboration, synthesis và số liệu tài nguyên thực tế. Project vẫn chưa có bằng chứng implementation, timing closure hoặc chạy trên FPGA vật lý.
 
-Project đã có mã nguồn, testbench, tài liệu và script để mentor review. Chưa tạo remote GitHub hoặc nộp bài; tên repository và địa chỉ nộp chưa có trong nguồn. Những nội dung còn thiếu đặc tả được liệt kê ở [open_questions.md](open_questions.md).
+Project đã có mã nguồn, testbench, tài liệu, script và repository GitHub để mentor review. Nguồn gốc vẫn không quy định URL repository hoặc thủ tục nộp chính thức; những nội dung còn thiếu đặc tả được liệt kê ở [open_questions.md](open_questions.md).
 
 ## Vivado 2026.1 Verification — 2026-09-28
 

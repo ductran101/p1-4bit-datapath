@@ -8,7 +8,7 @@ Các file hướng dẫn trong [context-pack](context-pack/) được giữ nguy
 |---|---|---|
 | P1 Digital Logic Foundation & Scripting; Week 1–2, D1–D10; gate-level 4-bit CPU Datapath, Python/TCL | Excel `Execution Plan!A28:E28` | ALU trong `rtl/`; script hỗ trợ trong `scripts/`; phạm vi mở trong `open_questions.md` |
 | Giờ project P1: 19.1 và 18.8 | Excel `Execution Plan!F36:F37` | Thông tin bối cảnh, không tạo yêu cầu RTL |
-| D10; design compile/simulate đúng; mentor review GitHub | Excel `Execution Plan!A53:E53` | Testbench, hướng dẫn chạy và `verification.md`; chưa xuất bản GitHub |
+| D10; design compile/simulate đúng; mentor review GitHub | Excel `Execution Plan!A53:E53` | Testbench, hướng dẫn chạy, `verification.md` và repository GitHub hiện tại |
 | Rubric 40% kỹ thuật, 25% kiểm chứng, 20% tài liệu, 15% thuyết trình | Excel `Execution Plan!A59` | Thông tin đánh giá chung của chương trình |
 | Các cổng, 10 opcode, 6 opcode chưa dùng trả 0 | Báo cáo trang 11, 21–22, 26–27 | `alu_4bit.v`, `result_mux.v`, README |
 | Full adder 2 XOR, 2 AND, 1 OR; ripple ×4, B XOR sub | Báo cáo trang 3–4, 23–24; gate PDF trang 1, 3–4 | `full_adder.v`, `adder_subtractor_4bit.v` |
